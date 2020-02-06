@@ -15,7 +15,7 @@ app.listen(8888);
 const url = 'http://localhost:8888';
 
 describe('express', function() {
-  this.timeout(6500);
+  this.timeout(120000);
   beforeEach(() => {
     nightmare = new Nightmare();
   });
@@ -64,7 +64,7 @@ describe('express', function() {
     .wait('div.alert.alert-success')
     .evaluate(() => document.querySelector('div.alert.alert-success').innerText)
     .end()
-    .then(el => expect(el).to.equal('The total change due is $6.99'))
+    .then(el => expect(el).to.equal('The Total Change Due Is $6.99'))
   );
 
   it('should calculate individual change correctly', () =>
